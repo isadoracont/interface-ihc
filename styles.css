@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-image: url('images/livros.png'); /* Link de exemplo para imagem de fundo */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensures body takes at least full height of viewport */
+    overflow-y: auto;
+}
+
+/* Estilos do Contêiner de Login */
+.login-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 16px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Design Responsivo */
+@media (max-width: 768px) {
+    body {
+        background-image: none; /* Remove background image on mobile */
+        margin: 0;
+        overflow-y: auto;
+        min-height: 100vh;
+    }
+
+    .login-container {
+        width: 100%; /* Full width on mobile */
+        height: auto; /* Full height on mobile */
+        min-height: 100%;
+        border-radius: 0; /* Remove rounded corners on mobile */
+        margin-top: 20px;
+        padding: 50px; /* Reduce padding for smaller screens */
+        box-shadow: none; /* Remove shadow for a flat look on mobile */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .login-container img.logo {
+        max-width: 80%; /* Scale down logo on smaller screens */
+        margin-bottom: 20px;
+    }
+}
+
+/* Logo */
+.login-container .logo {
+    width: 200px;
+    margin: 0 auto 20px auto; /* Center the logo and add bottom margin */
+    display: block;
+}
+
+.login-container p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.login-container hr {
+    margin-bottom: 30px;
+}
+
+/* Campos de Entrada */
+.login-container input[type="email"],
+.login-container input[type="password"],
+.login-container input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.form-label {
+    font-size: 14px;
+    color: #555;
+    text-align: left;
+    align-items: start;
+    position: absolute;
+    font-weight: bold;
+    margin-bottom: 5px;
+    padding-left: 5px;
+}
+
+/* Campo de Senha com Ícone */
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-container input[type="password"],
+.password-container input[type="text"] {
+    padding-right: 40px;
+}
+
+#password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+#password-toggle img {
+    width: 25px; /* Ajuste o tamanho da imagem conforme necessário */
+}
+
+/* Linha entre Checkbox e Link Esquecer Senha */
+.login-container .options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Checkbox */
+.login-container .remember-me {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #555;
+}
+
+.login-container .remember-me input {
+    margin-right: 5px;
+    accent-color: #B22222;
+}
+
+/* Link de Esquecer Senha */
+.login-container .forgot-password {
+    font-size: 14px;
+    color: #555;
+    text-decoration: underline;
+}
+
+.login-container .forgot-password:hover {
+    color: #B22222;
+}
+
+/* Botão de Login */
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #B22222;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.login-container button:hover {
+    background-color: #8B0000;
+}
+
+/* Link para Cadastro */
+.login-container .register-link {
+    display: block;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.login-container .register-link a {
+    color: #555;
+    text-decoration: underline;
+}
+
+.login-container .register-link a:hover {
+    color: #B22222;
+}
