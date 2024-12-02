@@ -80,8 +80,9 @@ body {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
-    margin-bottom: 20px;
     margin-top: 20px;
+    margin-bottom: 0px;
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 .form-label {
@@ -98,18 +99,22 @@ body {
 /* Campo de Senha com Ícone */
 .password-container {
     position: relative;
+    align-items: center;
     width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .password-container input[type="password"],
 .password-container input[type="text"] {
+    flex: 1;
     padding-right: 40px;
 }
 
 #password-toggle {
     position: absolute;
     right: 10px;
-    top: 50%;
+    top: 65%;
     transform: translateY(-50%);
     cursor: pointer;
 }
@@ -118,12 +123,29 @@ body {
     width: 25px; /* Ajuste o tamanho da imagem conforme necessário */
 }
 
+.toggle-icon {
+    filter: brightness(1);
+    transition: filter 0.3s ease;
+}
+
+#password-toggle:hover .toggle-icon,
+#password-toggle:focus-visible .toggle-icon {
+    filter: brightness(0.6); /* Darker #505050 */
+}
+
+.error-message {
+    color: rgb(219, 0, 0);
+    font-size: 13px;
+    text-align: left;
+    align-items: start;
+}
+
 /* Linha entre Checkbox e Link Esquecer Senha */
 .login-container .options {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 20px;
     font-size: 14px;
 }
 
@@ -151,6 +173,10 @@ body {
     color: #B22222;
 }
 
+.login-container .forgot-password:focus {
+    color: #B22222;
+}
+
 /* Botão de Login */
 .login-container button {
     width: 100%;
@@ -161,10 +187,14 @@ body {
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 .login-container button:hover {
+    background-color: #8B0000;
+}
+
+.login-container button:focus {
     background-color: #8B0000;
 }
 
@@ -182,5 +212,9 @@ body {
 }
 
 .login-container .register-link a:hover {
+    color: #B22222;
+}
+
+.login-container .register-link a:focus {
     color: #B22222;
 }
