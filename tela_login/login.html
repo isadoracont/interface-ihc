@@ -14,15 +14,15 @@
     </head>
 
     <body>
-        <div class="login-container">
+        <div id="login-container">
 
-            <img src="../images/logo.png" alt="Logo SAPIENS" class="logo">
+            <img src="../images/logo.png" alt="Logo SAPIENS" id="logo">
             <p>Iniciar Sessão</p>
             <hr>
 
             <form novalidate>
 
-                <div class="email-container">
+                <div class="field-container">
                     <label for="email" class="form-label">E-mail</label>
                     <input type="email" id="email" placeholder="E-mail" required aria-required="true" autocomplete="on">
                 </div>
@@ -30,31 +30,34 @@
                 <div class="password-container">
                     <label for="password" class="form-label">Senha</label>
                     <input type="password" id="password" placeholder="Senha" required autocomplete="on">
-                    <span tabindex="0" id="password-toggle">
+                    <span
+                        tabindex="0"
+                        id="password-toggle"
+                        role="button"
+                        aria-label="Mostrar senha"
+                        data-bs-toggle="tooltip"
+                        data-bs-title="Mostrar senha">
                         <img
                             class="toggle-icon"
                             id="toggleIcon"
                             src="../images/mostra_senha.svg"
-                            role="button"
-                            alt="Alternar visibilidade da senha"
-                            aria-label="Mostrar senha"
-                            data-bs-toggle="tooltip"
-                            data-bs-title="Mostrar senha">
+                            role="img"
+                            alt="Alternar visibilidade da senha">
                     </span>
                 </div>
 
                 <button type="submit">Iniciar Sessão</button>
             </form>
 
-            <div class="options">
-                <div class="remember-me">
+            <div id="options">
+                <div id="remember-me">
                     <input type="checkbox" checked id="remember">
                     <label for="remember">Lembrar-me</label>
                 </div>
-                <a href="#" class="forgot-password">Esqueceu a senha?</a>
+                <a href="#">Esqueceu a senha?</a>
             </div>
 
-            <div class="register-link">
+            <div id="link-cadastro">
                 Não possui uma conta? <a href="#">Cadastre-se!</a>
             </div>
         </div>
