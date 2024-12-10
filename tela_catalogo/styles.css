@@ -518,12 +518,17 @@ label {
 /* Tablet screens (up to 768px) */
 @media (max-width: 768px) {
     .col-rating,
-    .col-availability {
+    .col-availability,
+    .col-status {
         display: none;
     }
 
     .table-header, .table-row {
-        grid-template-columns: 80px minmax(150px, 2fr) minmax(100px, 150px) minmax(100px, 150px);
+        grid-template-columns: 80px minmax(150px, 2fr) minmax(100px, 150px);
+    }
+
+    .col-title {
+        text-align: center;
     }
 }
 
@@ -536,6 +541,34 @@ label {
 
     .table-header, .table-row {
         grid-template-columns: 80px minmax(150px, 2fr);
+    }
+
+    /* Stack layout for mobile */
+    .table-row {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .table-header {
+        display: none;
+    }
+
+    .col-cover img {
+        width: 100px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .col-title {
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .btn-preview {
+        margin-top: 10px;
+        width: 100%;
     }
 }
 
