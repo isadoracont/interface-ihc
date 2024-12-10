@@ -116,13 +116,135 @@
         <!-- Opções de ordenação -->
         <label for="ordenacao">Ordenar por:</label>
         <select id="ordenacao" class="form-select" aria-label="Default select example">
-            <option selected>Título</option>
-            <option value="1">Ano</option>
-            <option value="2">Autor</option>
-            <option value="3">Gênero</option>
+            <option value="titulo" selected>Título</option>
+            <option value="ano">Ano</option>
+            <option value="ano">Avaliação</option>
+            <option value="autor">Autor</option>
+            <option value="genero">Gênero</option>
         </select>
 
-        
+        <!-- Tabela de livros -->
+        <div class="book-table">
+            <!-- Cabeçalho da tabela -->
+            <!-- Cabeçalho da tabela -->
+            <div class="table-row table-header">
+                <div class="col-cover"></div> <!-- Espaço reservado para "Capa" -->
+                <div class="col-title">Título</div>
+                <div class="col-rating">Avaliação</div>
+                <div class="col-category">Categoria</div>
+                <div class="col-availability">Disponibilidade</div>
+                <div class="col-status">Status</div>
+                <div class="col-action"></div> <!-- Espaço reservado para "Ações" -->
+            </div>
+
+            <!-- Linha de livro 1 -->
+            <div class="table-row">
+                <div class="col-cover">
+                    <img src="img/dmmt.jpg" alt="Capa do Livro">
+                </div>
+                <div class="col-title">
+                    <strong>Não me Faça Pensar</strong><br>
+                    <small>Steve Krug, 2000</small>
+                </div>
+                <div class="col-rating">4.5/5</div>
+                <div class="col-category">
+                    Informática<br>
+                    <small>UX Design</small>
+                </div>
+                <div class="col-availability">
+                    <span class="available"><i class="fa-solid fa-circle-check"></i> Impresso</span>
+                    <span class="available"><i class="fa-solid fa-circle-check"></i> E-Book</span>
+                    <span class="available"><i class="fa-solid fa-circle-check"></i> Audio book</span>
+                </div>
+                <div class="col-status">
+                    <span class="status available"><i class="fa-solid fa-circle-check"></i>Na estante</span><br>
+                    <small><i class="fa-solid fa-location-dot"></i> CS A-15</small>
+                </div>
+                <div class="col-action">
+                    <button class="btn-preview">Preview</button>
+                </div>
+            </div>
+            <!-- Linha de livro 2 -->
+            <div class="table-row">
+                <div class="col-cover">
+                    <img src="img/doet.jpg" alt="Capa do Livro">
+                </div>
+                <div class="col-title">
+                    <strong>Design do dia-a-dia</strong><br>
+                    <small>Don Norman, 2000</small>
+                </div>
+                <div class="col-rating">4.5/5</div>
+                <div class="col-category">
+                    Informática<br>
+                    <small>UX Design</small>
+                </div>
+                <div class="col-availability">
+                    <span class="available"><i class="fa-solid fa-circle-xmark"></i> Impresso</span>
+                    <span class="available"><i class="fa-solid fa-circle-check"></i> E-Book</span>
+                    <span class="available"><i class="fa-solid fa-circle-xmark"></i> Audio book</span>
+                </div>
+                <div class="col-status">
+                    <span class="status unavailable"><i class="fa-solid fa-circle-xmark"></i>Indisponível</span><br>
+                </div>
+                <div class="col-action">
+                    <button class="btn-preview">Preview</button>
+                </div>
+            </div>
+            <!-- Linha de livro 3 -->
+            <div class="table-row">
+                <div class="col-cover">
+                    <img src="img/rdpd.jpg" alt="Capa do Livro">
+                </div>
+                <div class="col-title">
+                    <strong>Pai Rico, Pai Pobre</strong><br>
+                    <small>Steve Krug, 2000</small>
+                </div>
+                <div class="col-rating">4.5/5</div>
+                <div class="col-category">
+                    Informática<br>
+                    <small>UX Design</small>
+                </div>
+                <div class="col-availability">
+                    <span class="available"><i class="fa-solid fa-circle-check"></i> Impresso</span>
+                    <span class="available"><i class="fa-solid fa-circle-check"></i> E-Book</span>
+                    <span class="available"><i class="fa-solid fa-circle-check"></i> Audio book</span>
+                </div>
+                <div class="col-status">
+                    <span class="status available"><i class="fa-solid fa-circle-check"></i>Na estante</span><br>
+                    <small><i class="fa-solid fa-location-dot"></i> CS A-15</small>
+                </div>
+                <div class="col-action">
+                    <button class="btn-preview">Preview</button>
+                </div>
+            </div>
+            <!-- Linha de livro 4 -->
+            <div class="table-row">
+                <div class="col-cover">
+                    <img src="img/uiandux.jpg" alt="Capa do Livro">
+                </div>
+                <div class="col-title">
+                    <strong>Estratégias de UI e UI </strong><br>
+                    <small>Steve Krug, 2000</small>
+                </div>
+                <div class="col-rating">4.5/5</div>
+                <div class="col-category">
+                    Informática<br>
+                    <small>UX Design</small>
+                </div>
+                <div class="col-availability">
+                    <span class="available"><i class="fa-solid fa-circle-check"></i> Impresso</span>
+                    <span class="available"><i class="fa-solid fa-circle-check"></i> E-Book</span>
+                    <span class="available"><i class="fa-solid fa-circle-check"></i> Audio book</span>
+                </div>
+                <div class="col-status">
+                    <span class="status available"><i class="fa-solid fa-circle-check"></i>Na estante</span><br>
+                    <small><i class="fa-solid fa-location-dot"></i> CS A-15</small>
+                </div>
+                <div class="col-action">
+                    <button class="btn-preview">Preview</button>
+                </div>
+            </div>
+        </div>
     </main>
 
     <!-- Plugin VLibras (https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/vlibras) -->
