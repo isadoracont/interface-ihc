@@ -45,11 +45,11 @@
                 Todos
             </button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" type="button">Título</a></li>
-                <li><a class="dropdown-item" type="button">Autor</a></li>
-                <li><a class="dropdown-item" type="button">Gênero</a></li>
+                <li><button class="dropdown-item" type="button">Título</button></li>
+                <li><button class="dropdown-item" type="button">Autor</button></li>
+                <li><button class="dropdown-item" type="button">Gênero</button></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" type="button">Favoritos</a></li>
+                <li><button class="dropdown-item" type="button">Favoritos</button></li>
             </ul>
             
             <!-- Text Input -->
@@ -67,26 +67,27 @@
         <!-- Ícones e botões do lado direito -->
         <div class="right-actions">
             <!-- Botão de idioma -->
-            <div class="lang-select">
-                <button onclick="toggleLangMenu()"><i class="fa-solid fa-language"></i> Lang</button>
-                <div id="lang-menu" class="dropdown-menu">
-                    <a href="#">Português</a>
-                    <a href="#">English</a>
-                    <a href="#">Español</a>
-                    <a href="#">Français</a>
-                </div>
-            </div>
-    
-            <!-- Data e hora -->
-            <div class="date-time">
-                <span>09:00 HRS</span>
-                <span>4-MAR-2023</span>
-            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-language"></i> Lang
+                </button>
+                <ul class="dropdown-menu">
+                    <li><button class="dropdown-item active" type="button">Português<i class="fa-solid fa-check"></i></button></li>
+                    <li><button class="dropdown-item" type="button">Español</button></li>
+                    <li><button class="dropdown-item" type="button">English</button></li>
+                    <li><button class="dropdown-item" type="button">Français</button></li>
+                </ul>
+              </div>
     
             <!-- Perfil do usuário -->
-            <div class="user-profile">
-                <img src="img/user.png" alt="Perfil" />
-                <span>Usuário</span>
+            <div class="dropdown user-profile">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="img/user.png" alt="Perfil"/> Usuário
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#" class="dropdown-item">Perfil</a></li>
+                    <li><a href="#" class="dropdown-item">Logout</a></li>
+                </ul>
             </div>
         </div>
     </header>

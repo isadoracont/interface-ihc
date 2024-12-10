@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Estante de Livros</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Cabeçalho superior -->
+    <header>
+        <!-- Botão de menu no mobile -->
+        <button class="btn btn-outline-secondary bars-toggle d-none" type="button">
+            <i class="fas fa-bars"></i>
+        </button>
+        <!-- Logotipo e título -->
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo SAPIENS" />
+        </div>
+        <!-- Botão de voltar para header anterior -->
+        <button class="btn btn-outline-secondary back-button d-none" type="button">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+        <!-- Barra de pesquisa -->
+        <div class="input-group w-50 mx-auto search-bar">
+            <!-- Dropdown Button on the Left -->
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Todos
+            </button>
+            <ul class="dropdown-menu">
+                <li><button class="dropdown-item" type="button">Título</button></li>
+                <li><button class="dropdown-item" type="button">Autor</button></li>
+                <li><button class="dropdown-item" type="button">Gênero</button></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><button class="dropdown-item" type="button">Favoritos</button></li>
+            </ul>
+            
+            <!-- Text Input -->
+            <input type="text" class="form-control" placeholder="Pesquisar" aria-label="Text input with dropdown and buttons">
+            
+            <!-- Buttons on the Right -->
+            <button class="btn btn-outline-secondary" type="button">
+                <i class="fas fa-search"></i>
+            </button>
+            <button class="btn btn-outline-secondary" type="button">
+                <i class="fas fa-microphone"></i>
+            </button>
+        </div>
+
+        <!-- Ícones e botões do lado direito -->
+        <div class="right-actions">
+            <!-- Botão de idioma -->
+            <div class="dropdown lang-selection">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-language"></i><span>Lang</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><button class="dropdown-item active" type="button">Português<i class="fa-solid fa-check"></i></button></li>
+                    <li><button class="dropdown-item" type="button">Español</button></li>
+                    <li><button class="dropdown-item" type="button">English</button></li>
+                    <li><button class="dropdown-item" type="button">Français</button></li>
+                </ul>
+              </div>
+    
+            <!-- Perfil do usuário -->
+            <div class="dropdown user-profile">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="img/user.png" alt="Perfil"/><span>Usuário</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#" class="dropdown-item">Perfil</a></li>
+                    <li><a href="#" class="dropdown-item">Notificações</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a href="#" class="dropdown-item">Logout</a></li>
+                </ul>
+            </div>
+
+            <!-- Botão de pesquisa no mobile -->
+            <button class="btn btn-outline-secondary search-toggle d-none" type="button">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="sidebar-wrapper">
+        <!-- Barra lateral -->
+        <aside class="sidebar">
+            <button class="btn btn-outline-secondary bars-toggle d-block" type="button">
+                <i class="fas fa-bars"></i>
+            </button>
+            <!-- Navegação principal -->
+            <nav class="nav-links">
+                <a href="#"><i class="fas fa-home"></i>Início</a>
+                <div id="selecionado">
+                    <a href="#"><i class="fas fa-search"></i>Pesquisa</a>
+                </div>
+                <a href="#"><i class="fas fa-book"></i>Reservas</a>
+                <a href="#"><i class="fas fa-clock"></i>Histórico</a>
+                <a href="#"><i class="fa-solid fa-hand-holding-medical"></i>Contribua</a>
+            </nav>
+            <!-- Links no final da barra lateral -->
+            <div class="bottom-links">
+                <a href="#">Sobre</a>
+                <a href="#">Suporte</a>
+                <a href="#">Termos & Condições</a>
+            </div>
+        </aside>
+    </div>
+
+    <main>
+        <!-- Opções de ordenação -->
+        <label for="ordenacao">Ordenar por:</label>
+        <select id="ordenacao" class="form-select" aria-label="Default select example">
+            <option selected>Título</option>
+            <option value="1">Ano</option>
+            <option value="2">Autor</option>
+            <option value="3">Gênero</option>
+        </select>
+
+        
+    </main>
+
+    <!-- Plugin VLibras (https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/vlibras) -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <!-- Javascript Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

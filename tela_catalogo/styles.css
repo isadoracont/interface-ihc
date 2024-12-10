@@ -1,0 +1,389 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900);
+
+body {
+    font-family: 'Roboto', Arial;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #f8f9fa; /* Cor de fundo do header */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    color: #555;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 40px;
+}
+
+.right-actions {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown {
+    margin-left: 15px;
+}
+
+.input-group .form-control, 
+.input-group .btn, 
+.input-group .dropdown-toggle {
+    border-color: #ccc; /* Default border color */
+    transition: border-color 0.2s, background-color 0.2s; /* Smooth transition */
+}
+
+/* Hover and focus styling for the text input */
+.input-group .form-control:hover, 
+.input-group .form-control:focus-visible {
+    border-color: #9c9c9c; /* Darker gray border on hover/focus */
+    box-shadow: none; /* Disable default box shadow */
+}
+
+.input-group .form-control:focus-visible {
+    outline: 2px solid black; /* Standard black outline */
+}
+
+/* Styling for dropdown and buttons (hover and focus) */
+.input-group .btn:hover, 
+.input-group .btn:focus-visible, 
+.input-group .dropdown-toggle:hover, 
+.input-group .dropdown-toggle:focus-visible,
+.input-group .btn:active,
+.input-group .dropdown-toggle:active,
+.input-group .dropdown-toggle:focus {
+    background-color: #e0e0e0; /* Firebrick background */
+    border-color: #9c9c9c; /* Firebrick border */
+    color: #333333;
+    box-shadow: none; /* Disable default box shadow */
+}
+
+.input-group .btn:focus-visible, 
+.input-group .dropdown-toggle:focus-visible {
+    outline: 2px solid black; /* Standard black outline */
+}
+
+/* Ensure dropdown menu is not affected by other styles */
+.dropdown-menu {
+    border-color: #ccc; /* Matches default border color */
+}
+
+/* Dropdown menu item styling */
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus-visible {
+    background-color: #e0e0e0; /* Firebrick background for hovered item */
+    color: #333333; /* Contrast text */
+}
+
+/* Prevent any shadow effects */
+.input-group .btn, 
+.input-group .form-control {
+    box-shadow: none !important; /* Ensures no shadow */
+}
+
+.dropdown .btn {
+    border-color: #ccc; /* Default border color */
+    color: #000;
+    background-color: #fff;
+    transition: border-color 0.2s, background-color 0.2s;
+    box-shadow: none;
+}
+
+.dropdown .btn:hover,
+.dropdown .btn:focus-visible,
+.dropdown .btn:active {
+    background-color: #e0e0e0; /* Firebrick background */
+    border-color: #9c9c9c; /* Firebrick border */
+    color: #333333;
+    box-shadow: none; /* Disable default box shadow */
+}
+
+.dropdown .btn:focus-visible {
+    outline: 2px solid black;
+}
+
+.dropdown-menu .active {
+    background-color: #e0e0e0;
+    color: #333333;
+}
+
+/* Perfil do usuário */
+.user-profile img {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-profile span {
+    font-size: 16px;
+    color: #333;
+}
+
+.sidebar {
+    position: fixed;
+    top: 70px; /* Altura do header */
+    left: 0;
+    width: 200px; /* Largura da sidebar */
+    height: calc(100% - 70px); /* Altura total menos a altura do header */
+    background-color: #eeeeee;
+    color: #1a1919;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 999; /* Fica acima do conteúdo principal */
+    overflow-y: auto; /* Adiciona rolagem, se necessário */
+}
+
+/* Navegação principal */
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 70px;
+    width: 80%;
+}
+
+.nav-links a {
+    color: #666666;
+    text-decoration: none;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+    color: #333333;
+}
+
+.nav-links a:active {
+    color: #000;
+}
+
+.nav-links a:focus-visible {
+    outline: none; /* Remove o contorno padrão */
+    position: relative; /* Necessário para posicionar o pseudo-elemento */
+}
+
+.nav-links a:focus-visible::before {
+    content: ""; /* Cria o pseudo-elemento */
+    position: absolute;
+    top: -10px; /* Deslocamento no topo */
+    bottom: -10px; /* Deslocamento no fundo */
+    left: -5px; /* Deslocamento à esquerda */
+    right: -3px; /* Deslocamento à direita */
+    border: 2px solid #000000; /* Borda para simular o outline */
+    border-radius: 10px; /* Ajuste, se necessário */
+    z-index: -1; /* Mantém o pseudo-elemento atrás do conteúdo */
+}
+
+#selecionado {
+    position: relative; /* Necessário para o posicionamento do ::before */
+}
+
+#selecionado::before {
+    content: ""; /* Cria o pseudo-elemento */
+    position: absolute; /* Posiciona em relação ao #selecionado */
+    top: -10px; /* Expande o fundo para fora do div */
+    left: -5px;
+    right: -1px;
+    bottom: -10px;
+    background-color: #e0e0e0; /* Fundo cinza */
+    border-radius: 10px; /* Borda arredondada */
+    z-index: -1; /* Mantém o fundo atrás do conteúdo do div */
+}
+
+#selecionado a {
+    color: #333333; /* Texto mais escuro */
+    font-weight: bold; /* Destaque no texto */
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+#selecionado a i {
+    color: #333333; /* Ícone mais escuro */
+}
+
+/* Links no final da barra lateral */
+.bottom-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 14px;
+    padding-top: 15px;
+}
+
+.bottom-links a {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.bottom-links a:hover,
+.bottom-links a:focus-visible {
+    color: #B22222; /* Vermelho no hover */
+}
+
+.bottom-links a:active {
+    color: #660000; /* Vermelho mais escuro no clique */
+}
+
+@media (max-width: 768px) {
+    .logo img {
+        max-height: 20px; /* Reduz o tamanho do logo */
+        width: auto;
+        margin-left: 5px;
+    }
+
+    .search-bar {
+        display: none; /* Esconde a barra de pesquisa */
+    }
+
+    .bars-toggle {
+        display: block !important;
+    }
+
+    .search-toggle {
+        display: inline-flex !important;
+        margin-left: 20px;
+    }
+
+    .back-button {
+        display: inline-flex; /* Initially hidden */
+        margin-right: 10px; /* Add some spacing */
+    }
+
+    .back-button.d-none {
+        display: none !important; /* Hide back button by default */
+        margin-left: 10px;
+    }
+
+    header.mobile-search .back-button {
+        display: inline-flex !important; /* Show back button in search mode */
+    }
+
+    .lang-selection span {
+        display: none;
+    }
+
+    .user-profile span {
+        display: none; /* Hide the text on smaller screens */
+    }
+
+    .user-profile img {
+        margin-right: 0; /* Remove extra margin next to the image */
+        max-height: 25px; /* Reduz o tamanho do logo */
+        width: auto;
+    }
+
+    /* Sidebar for mobile screens */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px; /* Initially hidden */
+        height: 100%;
+        width: 250px;
+        background-color: #f8f9fa;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+    }
+
+    /* Sidebar visible state */
+    .sidebar.open {
+        transform: translateX(250px); /* Slide into view */
+    }
+
+    /* Overlay when sidebar is visible */
+    .sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        display: none;
+    }
+
+    /* Show overlay */
+    .sidebar-overlay.visible {
+        display: block;
+    }
+
+    .sidebar .bars-toggle {
+        display: block !important;
+        text-align: left;
+        width: 19%;
+    }
+}
+
+/* Exibir a barra de pesquisa no mobile ao clicar no botão */
+header.mobile-search .search-bar {
+    display: flex !important;
+    flex: 1;
+}
+
+header.mobile-search .bars-toggle {
+    display: none !important;
+}
+
+header .bars-toggle {
+    display: none;
+}
+
+.sidebar .bars-toggle {
+    display: none; /* Hide the button in larger screens */
+}
+
+@media (min-width: 769px) {
+    .sidebar .bars-toggle {
+        display: none !important; /* Hide the button in larger screens */
+    }
+}
+
+header.mobile-search .logo,
+header.mobile-search .right-actions,
+header.mobile-search .search-toggle {
+    display: none;
+}
+
+main {
+    margin-top: 70px; /* Push content below the fixed header */
+    margin-left: 200px; /* Adjust this value to match the sidebar's width */
+    padding: 20px; /* Optional: Add padding for better spacing */
+    transition: margin-left 0.3s ease; /* Smooth transition for sliding sidebar */
+}
+
+#ordenacao {
+    width: 25%;
+}
+
+@media (max-width: 768px) {
+    main {
+        margin-left: 0; /* Reset margin when the sidebar is hidden or collapsible */
+    }
+
+    #ordenacao {
+        width: 50%;
+    }
+}
+
