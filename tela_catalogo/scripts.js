@@ -24,6 +24,16 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // Function to update focusability based on screen size
+    function updateSidebarFocus() {
+        const isDesktop = window.innerWidth >= 768; // Adjust breakpoint as needed
+        if (isDesktop) {
+            toggleSidebarFocus(true); // Ensure sidebar is focusable on desktop
+        } else {
+            toggleSidebarFocus(sidebar.classList.contains("open"));
+        }
+    }
+
     // Trap focus inside the sidebar
     function trapFocus(event) {
         const focusableElements = sidebar.querySelectorAll("a, button, input, select, textarea");
@@ -77,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
     sidebar.querySelector(".bars-toggle").addEventListener("click", closeSidebar);
     overlay.addEventListener("click", closeSidebar);
 
-    // Hide the sidebar and reset tabindex on page load
-    toggleSidebarFocus(false);
+    // Update focusability on page load and window resize
+    updateSidebarFocus();
+    window.addEventListener("resize", updateSidebarFocus);
 });
