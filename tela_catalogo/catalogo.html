@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Estante de Livros</title>
+    <title>SAPIENS - Pesquisa</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js"></script>
@@ -15,40 +15,46 @@
     <!-- Cabeçalho superior -->
     <header>
         <!-- Botão de menu no mobile -->
-        <button class="btn btn-outline-secondary bars-toggle d-none" type="button">
-            <i class="fas fa-bars"></i>
+        <button class="btn btn-outline-secondary bars-toggle d-none" type="button" aria-label="Abrir menu lateral">
+            <i class="fas fa-bars" aria-hidden="true"></i>
         </button>
         <!-- Logotipo e título -->
         <div class="logo">
-            <img src="img/logo.png" alt="Logo SAPIENS" />
+            <img src="img/logo.png" alt="Logo SAPIENS"/>
         </div>
         <!-- Botão de voltar para header anterior -->
-        <button class="btn btn-outline-secondary back-button d-none" type="button">
-            <i class="fas fa-arrow-left"></i>
+        <button class="btn btn-outline-secondary back-button d-none" type="button" aria-label="Voltar para barra de navegação superior anterior">
+            <i class="fas fa-arrow-left" aria-hidden="true"></i>
         </button>
         <!-- Barra de pesquisa -->
         <div class="input-group w-50 mx-auto search-bar">
             <!-- Dropdown Button on the Left -->
-            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn btn-outline-secondary dropdown-toggle" 
+                    type="button" 
+                    data-bs-toggle="dropdown" 
+                    aria-haspopup="true" 
+                    aria-expanded="false" 
+                    aria-controls="search-options" 
+                    aria-label="Selecionar critério de pesquisa">
                 Todos
             </button>
-            <ul class="dropdown-menu">
-                <li><button class="dropdown-item" type="button">Título</button></li>
-                <li><button class="dropdown-item" type="button">Autor</button></li>
-                <li><button class="dropdown-item" type="button">Categoria</button></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><button class="dropdown-item" type="button">Favoritos</button></li>
+            <ul class="dropdown-menu" id="search-options" role="menu" aria-label="Critérios de pesquisa">
+                <li><button class="dropdown-item" type="button" role="menuitem">Título</button></li>
+                <li><button class="dropdown-item" type="button" role="menuitem">Autor</button></li>
+                <li><button class="dropdown-item" type="button" role="menuitem">Categoria</button></li>
+                <li><hr class="dropdown-divider" aria-hidden="true"></li>
+                <li><button class="dropdown-item" type="button" role="menuitem">Favoritos</button></li>
             </ul>
-            
+
             <!-- Text Input -->
-            <input type="text" class="form-control" placeholder="Pesquisar" aria-label="Text input with dropdown and buttons">
-            
+            <input type="text" class="form-control" placeholder="Pesquisar" aria-label="Pesquisar">
+
             <!-- Buttons on the Right -->
-            <button class="btn btn-outline-secondary" type="button">
-                <i class="fas fa-search"></i>
+            <button class="btn btn-outline-secondary" type="button" aria-label="Pesquisar">
+                <i class="fas fa-search" aria-hidden="true"></i>
             </button>
-            <button class="btn btn-outline-secondary" type="button">
-                <i class="fas fa-microphone"></i>
+            <button class="btn btn-outline-secondary" type="button" aria-label="Pesquisar por voz">
+                <i class="fas fa-microphone" aria-hidden="true"></i>
             </button>
         </div>
 
@@ -56,33 +62,47 @@
         <div class="right-actions">
             <!-- Botão de idioma -->
             <div class="dropdown lang-selection">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid fa-language"></i><span>Lang</span>
+                <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                aria-haspopup="true" 
+                aria-controls="lang-options" 
+                aria-label="Selecionar idioma para o site">
+                    <i class="fa-solid fa-language" aria-hidden="true"></i><span id="lang">Lang</span>
                 </button>
-                <ul class="dropdown-menu">
-                    <li><button class="dropdown-item active" type="button">Português<i class="fa-solid fa-check"></i></button></li>
-                    <li><button class="dropdown-item" type="button">Español</button></li>
-                    <li><button class="dropdown-item" type="button">English</button></li>
-                    <li><button class="dropdown-item" type="button">Français</button></li>
+                <ul class="dropdown-menu" id="lang-options" role="menu">
+                    <li><button class="dropdown-item active" type="button" role="menuitem" aria-checked="true">Português<i class="fa-solid fa-check"></i></button></li>
+                    <li><button class="dropdown-item" type="button" role="menuitem">Español</button></li>
+                    <li><button class="dropdown-item" type="button" role="menuitem">English</button></li>
+                    <li><button class="dropdown-item" type="button" role="menuitem">Français</button></li>
                 </ul>
-              </div>
-    
+            </div>
+
             <!-- Perfil do usuário -->
             <div class="dropdown user-profile">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="img/user.png" alt="Perfil"/><span>Usuário</span>
+                <button
+                    class="btn btn-secondary dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    aria-haspopup="true" 
+                    aria-controls="user-options" 
+                    aria-label="Opções de usuário">
+                    <img src="img/user.png" alt="Foto de perfil do usuário"/><span>Usuário</span>
                 </button>
-                <ul class="dropdown-menu">
-                    <li><a href="#" class="dropdown-item">Perfil</a></li>
-                    <li><a href="#" class="dropdown-item">Notificações</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a href="#" class="dropdown-item">Logout</a></li>
+                <ul class="dropdown-menu" id="user-options" role="menu">
+                    <li><a href="#" class="dropdown-item" role="menuitem">Perfil</a></li>
+                    <li><a href="#" class="dropdown-item" role="menuitem">Notificações</a></li>
+                    <li><hr class="dropdown-divider" aria-hidden="true"></li>
+                    <li><a href="#" class="dropdown-item" role="menuitem">Terminar sessão</a></li>
                 </ul>
             </div>
 
             <!-- Botão de pesquisa no mobile -->
-            <button class="btn btn-outline-secondary search-toggle d-none" type="button">
-                <i class="fas fa-search"></i>
+            <button class="btn btn-outline-secondary search-toggle d-none" type="button" aria-label="Abrir barra de pesquisa">
+                <i class="fas fa-search" aria-hidden="true"></i>
             </button>
         </div>
     </header>
@@ -90,18 +110,18 @@
     <div class="sidebar-wrapper">
         <!-- Barra lateral -->
         <aside class="sidebar">
-            <button class="btn btn-outline-secondary bars-toggle d-block" type="button">
+            <button class="btn btn-outline-secondary bars-toggle d-block" type="button" aria-label="Fechar menu lateral">
                 <i class="fas fa-bars"></i>
             </button>
             <!-- Navegação principal -->
             <nav class="nav-links">
-                <a href="#"><i class="fas fa-home"></i>Início</a>
+                <a href="#"><i class="fas fa-home" aria-hidden="true"></i>Início</a>
                 <div id="selecionado">
-                    <a href="#"><i class="fas fa-search"></i>Pesquisa</a>
+                    <a href="#" aria-current="page"><i class="fas fa-search" aria-hidden="true"></i>Pesquisa</a>
                 </div>
-                <a href="#"><i class="fas fa-book"></i>Reservas</a>
-                <a href="#"><i class="fas fa-clock"></i>Histórico</a>
-                <a href="#"><i class="fa-solid fa-hand-holding-medical"></i>Contribua</a>
+                <a href="#"><i class="fas fa-book" aria-hidden="true"></i>Reservas</a>
+                <a href="#"><i class="fas fa-clock" aria-hidden="true"></i>Histórico</a>
+                <a href="#"><i class="fa-solid fa-hand-holding-medical" aria-hidden="true"></i>Contribua</a>
             </nav>
             <!-- Links no final da barra lateral -->
             <div class="bottom-links">
@@ -115,17 +135,16 @@
     <main>
         <!-- Opções de ordenação -->
         <label for="ordenacao">Ordenar por:</label>
-        <select id="ordenacao" class="form-select" aria-label="Default select example">
-            <option value="titulo" selected>Título</option>
-            <option value="ano">Ano</option>
-            <option value="ano">Avaliação</option>
-            <option value="autor">Autor</option>
-            <option value="genero">Categoria</option>
+        <select id="ordenacao" class="form-select" aria-label="Selecione a opção para ordenar os itens">
+            <option value="Título" selected>Título</option>
+            <option value="Ano">Ano</option>
+            <option value="Avaliação">Avaliação</option>
+            <option value="Autor">Autor</option>
+            <option value="Gênero">Categoria</option>
         </select>
 
         <!-- Tabela de livros -->
         <div class="book-table">
-            <!-- Cabeçalho da tabela -->
             <!-- Cabeçalho da tabela -->
             <div class="table-row table-header">
                 <div class="col-cover"></div> <!-- Espaço reservado para "Capa" -->
@@ -140,10 +159,10 @@
             <!-- Linha de livro 1 -->
             <div class="table-row">
                 <div class="col-cover">
-                    <img src="img/doet.jpg" alt="Capa do Livro">
+                    <img src="img/doet.jpg" alt="Capa do livro Design do Dia-a-Dia">
                 </div>
                 <div class="col-title">
-                    <strong>Design do dia-a-dia</strong><br>
+                    <strong>Design do Dia-a-Dia</strong><br>
                     <small>Don Norman, 1988</small>
                 </div>
                 <div class="col-rating">4.5/5</div>
@@ -152,15 +171,15 @@
                     <small>UX Design</small>
                 </div>
                 <div class="col-availability">
-                    <span class="available"><i class="fa-solid fa-circle-xmark"></i> Impresso</span>
-                    <span class="available"><i class="fa-solid fa-circle-check"></i> E-Book</span>
-                    <span class="available"><i class="fa-solid fa-circle-xmark"></i> Audio book</span>
+                    <span class="available"><i class="fa-solid fa-circle-xmark" aria-label="Indisponível"></i> Impresso</span>
+                    <span class="available"><i class="fa-solid fa-circle-check" aria-label="Disponível"></i> E-Book</span>
+                    <span class="available"><i class="fa-solid fa-circle-xmark" aria-label="Indisponível"></i> Audio book</span>
                 </div>
                 <div class="col-status">
-                    <span class="status unavailable"><i class="fa-solid fa-circle-xmark"></i>Indisponível</span><br>
+                    <span class="status unavailable"><i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>Indisponível</span><br>
                 </div>
                 <div class="col-action">
-                    <button class="btn-preview">Preview</button>
+                    <button class="btn-preview" aria-label="Visualizar o livro Design do Dia-a-Dia">Preview</button>
                 </div>
             </div>
             <!-- Linha de livro 2 -->
@@ -178,16 +197,16 @@
                     <small>UX Design</small>
                 </div>
                 <div class="col-availability">
-                    <span class="available"><i class="fa-solid fa-circle-check"></i> Impresso</span>
-                    <span class="available"><i class="fa-solid fa-circle-check"></i> E-Book</span>
-                    <span class="available"><i class="fa-solid fa-circle-xmark"></i> Audio book</span>
+                    <span class="available"><i class="fa-solid fa-circle-check" aria-label="Disponível"></i> Impresso</span>
+                    <span class="available"><i class="fa-solid fa-circle-check" aria-label="Disponível"></i> E-Book</span>
+                    <span class="available"><i class="fa-solid fa-circle-xmark" aria-label="Indisponível"></i> Audio book</span>
                 </div>
                 <div class="col-status">
-                    <span class="status available"><i class="fa-solid fa-circle-check"></i>Na estante</span><br>
+                    <span class="status available"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Na estante</span><br>
                     <small><i class="fa-solid fa-location-dot"></i> CS A-15</small>
                 </div>
                 <div class="col-action">
-                    <button class="btn-preview">Preview</button>
+                    <button class="btn-preview" aria-label="Visualizar o livro Estratégias de UX e UI">Preview</button>
                 </div>
             </div>
             <!-- Linha de livro 3 -->
@@ -205,16 +224,16 @@
                     <small>UX Design</small>
                 </div>
                 <div class="col-availability">
-                    <span class="available"><i class="fa-solid fa-circle-check"></i> Impresso</span>
-                    <span class="available"><i class="fa-solid fa-circle-check"></i> E-Book</span>
-                    <span class="available"><i class="fa-solid fa-circle-check"></i> Audio book</span>
+                    <span class="available"><i class="fa-solid fa-circle-check" aria-label="Disponível"></i> Impresso</span>
+                    <span class="available"><i class="fa-solid fa-circle-check" aria-label="Disponível"></i> E-Book</span>
+                    <span class="available"><i class="fa-solid fa-circle-check" aria-label="Disponível"></i> Audio book</span>
                 </div>
                 <div class="col-status">
-                    <span class="status available"><i class="fa-solid fa-circle-check"></i>Na estante</span><br>
+                    <span class="status available"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Na estante</span><br>
                     <small><i class="fa-solid fa-location-dot"></i> CS A-15</small>
                 </div>
                 <div class="col-action">
-                    <button class="btn-preview">Preview</button>
+                    <button class="btn-preview" aria-label="Visualizar o livro Não me Faça Pensar">Preview</button>
                 </div>
             </div>
             <!-- Linha de livro 4 -->
@@ -231,15 +250,15 @@
                     Finanças<br>
                 </div>
                 <div class="col-availability">
-                    <span class="available"><i class="fa-solid fa-circle-xmark"></i> Impresso</span>
-                    <span class="available"><i class="fa-solid fa-circle-check"></i> E-Book</span>
-                    <span class="available"><i class="fa-solid fa-circle-check"></i> Audio book</span>
+                    <span class="available"><i class="fa-solid fa-circle-xmark" aria-label="Indisponível"></i> Impresso</span>
+                    <span class="available"><i class="fa-solid fa-circle-check" aria-label="Disponível"></i> E-Book</span>
+                    <span class="available"><i class="fa-solid fa-circle-check" aria-label="Disponível"></i> Audio book</span>
                 </div>
                 <div class="col-status">
-                    <span class="status available"><i class="fa-solid fa-circle-check"></i>Disponível</span><br>
+                    <span class="status available"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Disponível</span><br>
                 </div>
                 <div class="col-action">
-                    <button class="btn-preview">Preview</button>
+                    <button class="btn-preview" aria-label="Visualizar o livro Pai Rico, Pai Pobre">Preview</button>
                 </div>
             </div>
         </div>
