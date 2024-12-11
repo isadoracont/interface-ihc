@@ -24,6 +24,16 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // Function to update focusability based on screen size
+    function updateSidebarFocus() {
+        const isDesktop = window.innerWidth >= 768; // Adjust breakpoint as needed
+        if (isDesktop) {
+            toggleSidebarFocus(true); // Ensure sidebar is focusable on desktop
+        } else {
+            toggleSidebarFocus(sidebar.classList.contains("open"));
+        }
+    }
+
     // Trap focus inside the sidebar
     function trapFocus(event) {
         const focusableElements = sidebar.querySelectorAll("a, button, input, select, textarea");
@@ -77,6 +87,66 @@ document.addEventListener("DOMContentLoaded", function () {
     sidebar.querySelector(".bars-toggle").addEventListener("click", closeSidebar);
     overlay.addEventListener("click", closeSidebar);
 
-    // Hide the sidebar and reset tabindex on page load
-    toggleSidebarFocus(false);
+    // Update focusability on page load and window resize
+    updateSidebarFocus();
+    window.addEventListener("resize", updateSidebarFocus);
+
+    const borrowButton = document.querySelector(".borrow-btn");
+    const modal = document.getElementById("reservation-modal");
+    const closeButton = document.getElementById("close-button");
+
+    // Open the modal
+    borrowButton.addEventListener("click", () => {
+        modal.classList.remove("hidden");
+        closeButton.focus(); // Move focus to the close button
+        trapFocus(modal); // Start focus trapping
+    });
+
+    // Close the modal
+    function closeModal() {
+        modal.classList.add("hidden");
+        borrowButton.focus(); // Return focus to the borrow button
+        document.removeEventListener("keydown", handleKeydown); // Stop listening for focus trapping
+    }
+
+    closeButton.addEventListener("click", closeModal);
+
+    // Close the modal when clicking outside of it
+    modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Focus trapping logic
+    function trapFocus(element) {
+        const focusableElements = element.querySelectorAll("button, [href], input, select, textarea, [tabindex]:not([tabindex='-1'])");
+        const firstFocusable = focusableElements[0];
+        const lastFocusable = focusableElements[focusableElements.length - 1];
+
+        function handleKeydown(event) {
+            if (event.key === "Tab") {
+                // Shift + Tab: move focus backward
+                if (event.shiftKey) {
+                    if (document.activeElement === firstFocusable) {
+                        event.preventDefault();
+                        lastFocusable.focus();
+                    }
+                }
+                // Tab: move focus forward
+                else {
+                    if (document.activeElement === lastFocusable) {
+                        event.preventDefault();
+                        firstFocusable.focus();
+                    }
+                }
+            }
+            // Escape key: close the modal
+            if (event.key === "Escape") {
+                closeModal();
+            }
+        }
+
+        document.addEventListener("keydown", handleKeydown);
+    }
 });
