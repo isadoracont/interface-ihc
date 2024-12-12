@@ -105,12 +105,12 @@ function togglePassword() {
 
     if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
-        toggleIcon.src = "../images/esconde_senha.svg";
+        toggleIcon.src = "img/esconde_senha.svg";
         botao.setAttribute('data-bs-title', 'Esconder senha');
         botao.setAttribute('aria-label', 'Esconder senha');
     } else {
         passwordInput.type = 'password';
-        toggleIcon.src = "../images/mostra_senha.svg";
+        toggleIcon.src = "img/mostra_senha.svg";
         botao.setAttribute('data-bs-title', 'Mostrar senha');
         botao.setAttribute('aria-label', 'Mostrar senha');
     }

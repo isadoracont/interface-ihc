@@ -282,9 +282,8 @@
                 tela anterior
             </button>
 
-            <!-- Tabela de livros -->
+            <!-- Livro -->
             <div class="book-table">
-                <!-- Linha de livro 1 -->
                 <section class="book-details">
                     <div class="book-cover">
                         <img
@@ -292,7 +291,7 @@
                             alt="Capa do Livro - Não Me Faça Pensar"
                         />
                         <div class="book-actions">
-                            <button id="share-button"><i class="fas fa-share" aria-hidden="true"></i>Compartilhar</button>
+                            <button id="share-button" aria-label="Compartilhar livro"><i class="fas fa-share" aria-hidden="true"></i>Compartilhar</button>
                         </div>
                     </div>
                     <div class="book-info">
@@ -327,7 +326,7 @@
                             </div>
                         </div>
                         <div class="action-buttons">
-                            <button class="borrow-btn">Reservar</button>
+                            <button class="borrow-btn" aria-label="Reservar livro">Reservar</button>
                         </div>
                     </div>
                 </section>
@@ -397,7 +396,7 @@
                                         src="img/livro2.jpg"
                                         alt="Livro Creative"
                                     />
-                                <a href="#"><p>Creative Book</p></a>
+                                <a href="#"><p>Livro Creative</p></a>
                             </div>
                         </div>
                     </div>
@@ -407,7 +406,7 @@
             <!-- Modal para a reserva -->
             <div id="reservation-modal" class="modal hidden">
                 <div class="modal-content">
-                    <button id="close-button" class="close-btn"><i class="fas fa-xmark" aria-hidden="true"></i></button>
+                    <button id="close-button" class="close-btn" aria-label="Fechar mensagem de confirmação de reserva do livro"><i class="fas fa-xmark" aria-hidden="true"></i></button>
                     <p>Agradecemos a reserva!</p><br><p>Venha retirar seu livro!</p>
                 </div>
             </div>

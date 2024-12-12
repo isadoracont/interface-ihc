@@ -4,11 +4,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto';
+    font-family: 'Roboto', Arial;
 }
 
 body {
-    background-image: url('../images/livros.png');
+    background-image: url('img/livros.png');
     background-size: cover;
     display: flex;
     justify-content: center;
